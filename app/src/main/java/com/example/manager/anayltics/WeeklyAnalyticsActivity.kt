@@ -1,4 +1,4 @@
-package com.example.manager
+package com.example.manager.anayltics
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,24 +6,20 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import com.anychart.AnyChart
-import com.anychart.AnyChartView
 import com.anychart.chart.common.dataentry.DataEntry
 import com.anychart.chart.common.dataentry.ValueDataEntry
 import com.anychart.enums.Align
 import com.anychart.enums.LegendLayout
+import com.example.manager.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_daily_analytics.*
 import kotlinx.android.synthetic.main.activity_daily_analytics.analyticsTransportAmount
-import kotlinx.android.synthetic.main.activity_daily_analytics.anyChartView
 import kotlinx.android.synthetic.main.activity_daily_analytics.linearLayoutFood
-import kotlinx.android.synthetic.main.activity_daily_analytics.linearLayoutTransport
-import kotlinx.android.synthetic.main.activity_daily_analytics.monthSpentAmount
 import kotlinx.android.synthetic.main.activity_weekly_analytics.*
 import org.joda.time.DateTime
 import org.joda.time.MutableDateTime
 import org.joda.time.Weeks
-import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 

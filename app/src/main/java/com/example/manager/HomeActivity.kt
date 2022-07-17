@@ -6,20 +6,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
 import android.widget.Toast
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
 import kotlinx.android.synthetic.main.activity_home.*
 import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ktx.getValue
 
-import androidx.annotation.NonNull
+import com.example.manager.news.NewsActivity
 
 import com.google.firebase.database.DataSnapshot
 
@@ -31,7 +24,6 @@ import org.joda.time.DateTime
 import org.joda.time.Months
 import org.joda.time.MutableDateTime
 import org.joda.time.Weeks
-import java.lang.NumberFormatException
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -43,19 +35,13 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var personalRef:DatabaseReference
     private lateinit var budgetRef:DatabaseReference
     var onlineUserId:String=""
-   var totalAmountMonth:Int?=0
+  // var totalAmountMonth:Int?=0
     var totalAmountBudget:Int?=0
     var totalAmountBudgetB:Int?=0
     var totalAmountBudgetC:Int?=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-          val budgetTv=findViewById<TextView>(R.id.budget_TV)
-         val totayspendingTv=findViewById<TextView>(R.id.today_TV)
-        val budgetremaining=findViewById<TextView>(R.id.saving_TV)
-        val weekspendingTv=findViewById<TextView>(R.id.week_TV)
-        val monthspendingTv=findViewById<TextView>(R.id.month_TV)
-
       mAuth= FirebaseAuth.getInstance()
         onlineUserId=FirebaseAuth.getInstance().currentUser!!.uid
         budgetRef=FirebaseDatabase.getInstance().getReference("Budget").child(onlineUserId)
@@ -82,7 +68,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
         analyticscardview.setOnClickListener {
-            val intent =Intent(this,ChooseAnalyticsActivity::class.java)
+            val intent =Intent(this, NewsActivity::class.java)
             startActivity(intent)
         }
         historycardview.setOnClickListener {
@@ -95,9 +81,6 @@ class HomeActivity : AppCompatActivity() {
                 if (snapshot.exists() && snapshot.childrenCount > 0) {
                         for (ds: DataSnapshot in snapshot.children) {
                            val map = ds.value as Map<String, Any>?
-//                            val map = snapshot.getValue<Map<String, String>>()
-//                                ?: error("map missing in firebase snapshot")
-//
                            val total = map!!["amount"]
                             Log.d("Tag", "$total", null)
                             val ptotal = total.toString().toInt()
@@ -109,8 +92,7 @@ class HomeActivity : AppCompatActivity() {
                 else {
 
                       personalRef.child("budget").setValue(0)
-//                        Toast.makeText(this@HomeActivity, "Please set a budget", Toast.LENGTH_LONG)
-//                            .show()
+                    // remember to add a notification to this condition.
                     }
 
 

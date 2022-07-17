@@ -114,7 +114,7 @@ class HistoryActivity2 : AppCompatActivity(), DatePickerDialog.OnDateSetListener
                     }
                 }
                 else{
-                   historytotalamountspent.visibility=View.VISIBLE
+                  historytotalamountspent.visibility=View.VISIBLE
                     historytotalamountspent.setText("There are no transactions from that day")
                 }
 

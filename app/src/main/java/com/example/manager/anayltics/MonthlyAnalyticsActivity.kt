@@ -1,4 +1,4 @@
-package com.example.manager
+package com.example.manager.anayltics
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toolbar
 import com.anychart.AnyChartView
+import com.example.manager.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 

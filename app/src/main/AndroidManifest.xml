@@ -19,16 +19,19 @@
             android:name=".TransactionByDateActivity"
             android:exported="false" />
         <activity
-            android:name=".MonthlyAnalyticsActivity"
+            android:name=".anayltics.MonthlyAnalyticsActivity"
             android:exported="false" />
         <activity
-            android:name=".WeeklyAnalyticsActivity"
+            android:name=".anayltics.WeeklyAnalyticsActivity"
             android:exported="false" />
         <activity
-            android:name=".DailyAnalyticsActivity"
+            android:name=".anayltics.DailyAnalyticsActivity"
             android:exported="false" />
         <activity
-            android:name=".ChooseAnalyticsActivity"
+            android:name=".news.NewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".anayltics.ChooseAnalyticsActivity"
             android:exported="false" />
         <activity
             android:name=".WeekSpendingActivity"
@@ -50,6 +53,7 @@
         <activity
             android:name=".SignIn"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -51,6 +51,7 @@ class WeekSpendingActivity : AppCompatActivity() {
         mAuth= FirebaseAuth.getInstance()
         onlineUserId=mAuth.currentUser!!.uid
 
+        // for week and month spendings.
         if (intent.extras != null)
         {
             type=intent.getStringExtra("type").toString()

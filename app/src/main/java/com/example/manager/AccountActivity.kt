@@ -14,7 +14,7 @@ class AccountActivity : AppCompatActivity() {
         setContentView(R.layout.activity_account)
 
         toolbar.setTitle("Account Info")
-        userEmail.setText(FirebaseAuth.getInstance().currentUser!!.email)
+        userEmail.setText("Test")
         logoutBtn.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             //set title for alert dialog

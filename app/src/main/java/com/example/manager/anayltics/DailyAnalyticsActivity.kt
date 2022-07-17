@@ -1,13 +1,10 @@
-package com.example.manager
+package com.example.manager.anayltics
 
-import android.R.attr
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.anychart.AnyChart
-import com.anychart.AnyChartView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_daily_analytics.*
@@ -17,14 +14,10 @@ import java.util.*
 import com.anychart.chart.common.dataentry.DataEntry
 import com.anychart.chart.common.dataentry.ValueDataEntry
 
-import android.R.attr.data
-import android.R.attr.data
-import android.icu.number.IntegerWidth
 import android.util.Log
-import com.anychart.AnyChart.pie
 import com.anychart.enums.Align
 import com.anychart.enums.LegendLayout
-import java.lang.Float.parseFloat
+import com.example.manager.R
 
 
 class DailyAnalyticsActivity : AppCompatActivity() {
